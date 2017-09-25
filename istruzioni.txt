@@ -1,0 +1,29 @@
+Progetto Software 2
+
+
+Istruzioni
+
+Implementa ogni funzione e completa l'implementazione di ogni classe secondo le specifiche indicate nei commenti.
+Quando vuoi testare il funzionamento della tua soluzione, premi "Run" e chiama le funzioni direttamente nella console in basso a sinistra.
+Una volta terminato premi submit e assicurati che tutti i test siano verdi (oppure sottometti lo stesso se pensi di avere ragione comunque)
+
+Criteri di valutazione
+
+Numero di test verdi, preferibilmente tutti.
+Leggibilità del codice
+Documentazione del codice
+Uso dello stile appropriato per Ruby (es. [].each invece di costrutti for)
+
+Consigli
+
+Puoi usare la funzione puts per stampare del testo a video, per effettuare il debug pero' è meglio usare la funzione p
+Se preferisci, puoi scaricare (o copiare) il codice sorgente dell'esercizio, lavorare sulla tua macchina, e caricare la tua soluzione una volta terminato
+
+Risorse utili
+
+Documentazione di Ruby: https://ruby-doc.org (in particolare Array, Enumerable e String)
+Documentazione dei metodi di Enumberable map, each e reduce (https://ruby-doc.org/core-2.4.1/Enumerable.html)
+Documentazione dei metodi di Object, in particolare is_a? (https://ruby-doc.org/core-2.4.2/Object.html)
+Ruby 2 keyword arguments: https://robots.thoughtbot.com/ruby-2-keyword-arguments
+Ruby style guide: https://github.com/bbatsov/ruby-style-guide
+
