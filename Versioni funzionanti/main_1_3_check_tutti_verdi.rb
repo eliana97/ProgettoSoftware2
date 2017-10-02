@@ -11,6 +11,7 @@ end
 
 # Restituisce n! (fattoriale)
 def factorial(n)
+  #controllo che l'input sia un intero
   raise ArgumentError.new('n non è un intero') unless n.is_a? Integer 
   #studio prima i casi particolari
   if(n<0)
