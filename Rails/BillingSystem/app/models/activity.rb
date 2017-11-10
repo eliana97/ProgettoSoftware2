@@ -1,6 +1,8 @@
 class Activity < ApplicationRecord
   belongs_to :customer
 
+  #commento
+
   validates :customer, presence: true
   validates :description, presence: true
   validates :date, presence: true
