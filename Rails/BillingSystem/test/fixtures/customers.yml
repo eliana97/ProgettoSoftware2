@@ -6,7 +6,7 @@ one:
   address: MyString
   phone: MyString
   email: MyString
-  SSN: MyString
+  vat_number: MyString
 
 two:
   name: MyString
@@ -14,4 +14,4 @@ two:
   address: MyString
   phone: MyString
   email: MyString
-  SSN: MyString
+  vat_number: MyString

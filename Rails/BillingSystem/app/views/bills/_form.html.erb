@@ -1,0 +1,47 @@
+<%= form_with(model: bill, local: true) do |form| %>
+  <% if bill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+      <ul>
+      <% bill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :customer %>
+    <%= form.select :customer_id, options_for_select(Customer.all.map{|c| [c, c.id]}), id: :activity_customer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :bill_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_method %>
+    <%= form.select(:payment_method, [["30"],["60"],["90"]]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vat %>
+    <%= form.select(:vat, [["10"],["22"]]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :discount %>
+    <%= form.number_field :discount, id: :bill_discount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additional_cost %>
+    <%= form.text_field :additional_cost, id: :bill_additional_cost %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

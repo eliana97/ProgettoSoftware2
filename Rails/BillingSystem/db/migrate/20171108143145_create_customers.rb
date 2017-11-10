@@ -5,7 +5,7 @@ class CreateCustomers < ActiveRecord::Migration[5.1]
       t.string :address
       t.string :phone
       t.string :email
-      t.string :SSN
+      t.string :vat_number
 
       t.timestamps
     end

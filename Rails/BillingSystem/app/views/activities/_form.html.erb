@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :customer %>
+    <%= form.select :customer_id, options_for_select(Customer.all.map{|c| [c, c.id]}), id: :activity_customer %>
+  </div>
+
+  <div class="field">
     <%= form.label :description %>
     <%= form.text_field :description, id: :activity_description %>
   </div>

@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Customer</th>
       <th>Description</th>
       <th>Date</th>
       <th>Start time</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
+        <td><%= activity.customer %></td>
         <td><%= activity.description %></td>
         <td><%= activity.date %></td>
         <td><%= activity.start_time.strftime("%H:%M") %></td>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @bill.customer %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @bill.date %>
+</p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @bill.payment_method %>
+</p>
+
+<p>
+  <strong>Vat:</strong>
+  <%= @bill.vat %>
+</p>
+
+<p>
+  <strong>Taxable:</strong>
+  <%= @bill.taxable %>
+</p>
+
+<p>
+  <strong>Total cost:</strong>
+  <%= @bill.total_cost %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @bill.discount %>
+</p>
+
+<p>
+  <strong>Additional cost:</strong>
+  <%= @bill.additional_cost %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>
