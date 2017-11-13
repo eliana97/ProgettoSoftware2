@@ -1,13 +1,13 @@
-# README
+# What is it
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application's purpose is to create bills from activity that the user can insert with a form.
 
 Things you may want to cover:
 
-* Ruby version
+# Ruby - Rails version
 
-* System dependencies
+Ruby version 2.4.2
+Rails version 5.1.4
 
 * Configuration
 
