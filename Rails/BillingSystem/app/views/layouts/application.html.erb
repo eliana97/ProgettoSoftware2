@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>BillingSystem</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body>
+  <header class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to "Billing System", root_path, class: "navbar-brand" %>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Activities", activities_path %></li>
+          <li><%= link_to "Customers", customers_path %></li>
+          <li><%= link_to "Bills", bills_path %></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <section class="container">
     <%= yield %>
-  </body>
+  </section>
 </html>
