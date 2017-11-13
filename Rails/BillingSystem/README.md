@@ -2,8 +2,6 @@
 
 This application's purpose is to create bills from activity that the user can insert with a form.
 
-Things you may want to cover:
-
 # Ruby - Rails version
 
 Ruby version 2.4.2
