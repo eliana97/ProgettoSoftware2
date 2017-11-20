@@ -1,13 +1,20 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Bills</h1>
 
-<table>
+<%= form_tag bills_path, :method => 'get' do %>
+  <div class="field form-group">
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Customer", :name => nil, class: "btn btn-default" %>
+  </div>
+<% end %>
+
+<table class="table table-responsive">
   <thead>
     <tr>
       <th>Customer</th>
       <th>Date</th>
       <th>Payment method</th>
+      <th>Deadline</th>
       <th>Vat [%]</th>
       <th>Taxable</th>
       <th>Discount [%]</th>
@@ -23,6 +30,7 @@
         <td><%= bill.customer %></td>
         <td><%= bill.date %></td>
         <td><%= bill.payment_method %></td>
+        <td><%= bill.deadline %></td>
         <td><%= bill.vat %></td>
         <td><%= bill.get_taxable %></td>
         <td><%= bill.discount %></td>
@@ -31,10 +39,12 @@
         <td><%= link_to 'Show', bill %></td>
         <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
         <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Create PDF document', bill_path(bill, :format => :pdf) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @bills %>
 
 <br>
 

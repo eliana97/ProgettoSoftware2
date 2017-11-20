@@ -1,10 +1,12 @@
 class CustomersController < ApplicationController
+  before_action :require_login
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
+    #@customers = current_user.customers.all
+    @customers = current_user.customers.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
   end
 
   # GET /customers/1
@@ -14,7 +16,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/new
   def new
-    @customer = Customer.new
+    @customer = current_user.customers.new
   end
 
   # GET /customers/1/edit
@@ -24,7 +26,7 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-    @customer = Customer.new(customer_params)
+    @customer = current_user.customers.new(customer_params)
 
     respond_to do |format|
       if @customer.save
@@ -64,7 +66,7 @@ class CustomersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
-      @customer = Customer.find(params[:id])
+      @customer = current_user.customers.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

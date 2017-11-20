@@ -11,37 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :customer %>
-    <%= form.select :customer_id, options_for_select(Customer.all.map{|c| [c, c.id]}), id: :activity_customer %>
+    <%= form.select :customer_id, options_for_select(current_user.customers.all.map{|c| [c, c.id]}),
+    id: :activity_customer, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :description %>
-    <%= form.text_field :description, id: :activity_description %>
+    <%= form.text_field :description, class: "form-control", id: :activity_description %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :date %>
-    <%= form.date_select :date, id: :activity_date %>
+    <%= form.date_select :date, class: "form-control", id: :activity_date %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :start_time %>
-    <%= form.time_select :start_time, id: :activity_start_time %>
+    <%= form.time_select :start_time, class: "form-control", id: :activity_start_time %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :end_time %>
-    <%= form.time_select :end_time, id: :activity_end_time %>
+    <%= form.time_select :end_time, class: "form-control", id: :activity_end_time %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :note %>
-    <%= form.text_field :note, id: :activity_note %>
+    <%= form.text_field :note, class: "form-control", id: :activity_note %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -22,8 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-Behavior Driven Development
-- Per ogni user story creare una feature
-- Rimanere ad alto livello
-- Chiamare in console: rake cucumber

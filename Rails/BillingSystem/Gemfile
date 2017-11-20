@@ -32,7 +32,16 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'bindex'
+#autenticazione
+gem 'clearance'
+#gelocalization
+gem 'geocoder'
 
+gem 'will_paginate', '~> 3.0.5'
+
+#export pdf
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -47,8 +56,16 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
 
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'selenium-webdriver'
 end
 
 group :development do

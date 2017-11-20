@@ -11,37 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :customer %>
-    <%= form.select :customer_id, options_for_select(Customer.all.map{|c| [c, c.id]}), id: :activity_customer %>
+    <%= form.select :customer_id, options_for_select(current_user.customers.all.map{|c| [c, c.id]}),
+    id: :activity_customer, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :date %>
-    <%= form.date_select :date, id: :bill_date %>
+    <%= form.date_select :date, id: :bill_date, class: "form-control date" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :payment_method %>
-    <%= form.select(:payment_method, [["30"],["60"],["90"]]) %>
+    <%= form.select(:payment_method, [["30"],["60"],["90"]], class: "form-control") %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :vat %>
-    <%= form.select(:vat, [["10"],["22"]]) %>
+    <%= form.select :vat, [["10"],["22"]], class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="col-auto">
     <%= form.label :discount %>
-    <%= form.number_field :discount, id: :bill_discount %>
+    <div class="input-group mb-2 mb-sm-0">
+      <div class="input-group-addon">%</div>
+      <%= form.number_field :discount, id: :bill_discount, class: "form-control" %>
+    </div>
   </div>
+  <br>
 
-  <div class="field">
+  <div class="col-auto">
     <%= form.label :additional_cost %>
-    <%= form.text_field :additional_cost, id: :bill_additional_cost %>
+    <div class="input-group mb-2 mb-sm-0">
+      <div class="input-group-addon">€</div>
+      <%= form.text_field :additional_cost, id: :bill_additional_cost, class: "form-control" %>
+    </div>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

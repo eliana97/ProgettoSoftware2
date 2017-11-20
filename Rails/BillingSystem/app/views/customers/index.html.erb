@@ -1,8 +1,14 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Customers</h1>
 
-<table>
+<%= form_tag customers_path, :method => 'get' do %>
+  <div class="field form-group">
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Business Name", :name => nil, class: "btn btn-default" %>
+  </div>
+<% end %>
+
+<table class="table table-responsive">
   <thead>
     <tr>
       <th>Business Name</th>
@@ -29,6 +35,8 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @customers %>
+
 
 <br>
 

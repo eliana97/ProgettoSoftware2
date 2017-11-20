@@ -1,0 +1,222 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bill_PDF</title>
+
+  <style>
+  .invoice-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    color: #555;
+  }
+
+  .invoice-box table {
+    width: 100%;
+
+    line-height: inherit;
+    text-align: left;
+  }
+
+  .invoice-box table td {
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  .invoice-box table tr td:nth-child(2) {
+    text-align: right;
+  }
+
+  .invoice-box table tr.top table td {
+    padding-bottom: 20px;
+  }
+
+  .invoice-box table tr.top table td.title {
+    font-size: 45px;
+    line-height: 45px;
+    color: #333;
+  }
+
+  .invoice-box table tr.top table td.created {
+    text-align: right;
+  }
+
+  .invoice-box table tr.information table td {
+    padding-bottom: 40px;
+  }
+
+  .invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+  }
+
+  .invoice-box table tr.heading td.description {
+    text-align: left;
+  }
+
+  .invoice-box table tr.details td {
+    padding-bottom: 20px;
+  }
+
+  .invoice-box table tr.item td{
+  }
+
+  .invoice-box table tr.item td.description{
+    text-align: left;
+    width: 90%;
+  }
+
+  .invoice-box table tr.item.last td {
+    border-bottom: none;
+  }
+
+  .invoice-box table tr.total  {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+      width: 100%;
+      display: block;
+      text-align: left;
+    }
+
+    /*.invoice-box table tr.information table td {
+      width: 100%;
+      display: block;
+      text-align: left;
+    }*/
+
+    .invoice-box table tr.information table td.customer {
+      text-align: left;
+    }
+
+    .invoice-box table tr td.owner {
+      text-align: right;
+    }
+  }
+
+  /** RTL **/
+  .rtl {
+    direction: rtl;
+    font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  }
+
+  .rtl table {
+    text-align: right;
+  }
+
+  .rtl table tr td:nth-child(2) {
+    text-align: left;
+  }
+
+  .right{
+    text-align: right;
+  }
+
+  .center{
+    text-align: center;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+      <tr class="top">
+        <td colspan="2" class="title">
+          <%= wicked_pdf_image_tag("logo.png", :width => "300px") %>
+        </td>
+
+        <td class="created">
+          Invoice #:
+          <%= @bill.id %><br>
+          Created:
+          <%= @bill.date %><br>
+        </td>
+      </tr>
+
+      <tr height="50px"></tr>
+
+      <tr class="information">
+        <td class="customer">
+          <%= @bill.customer %>
+        </td>
+        <td></td>
+
+        <td class="owner">
+          ProgettoSoftware2<br>
+          Dietre, Battisti, Canton<br>
+          Telegram: ProgettoSOftware2
+        </td>
+      </tr>
+
+      <tr height="50px"></tr>
+
+      <tr class="heading">
+        <td class="description">
+          Description
+        </td>
+
+        <td>
+          Quantity
+        </td>
+
+        <td class="right">
+          Price
+        </td>
+      </tr>
+
+      <tr class="item">
+        <td class="description">
+          <% @bill.customer.activities.each do |bill| %>
+          <tr>
+            <td class="description"><%= bill.description %></td>
+            <td class="center"><%= bill.hours_diff %></td>
+            <td class="right"><%= bill.hours_diff * 10 %></td>
+            <% end %>
+          </tr>
+        </td>
+      </tr>
+
+      <tr class="total">
+        <td>
+        </td>
+
+        <td>
+        </td>
+
+        <td class="right">
+          Taxable:
+          <%= @bill.get_taxable %>
+        </td>
+      </tr>
+
+      <tr class="total">
+        <td>
+          Deadline:
+          <%= @bill.deadline%>
+        </td>
+
+        <td>
+        </td>
+
+        <td class="right">
+          Total:
+          <%= @bill.get_total_cost %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
