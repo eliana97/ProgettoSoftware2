@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 
   #static pages
   get '/about', to: 'static_pages#about'
-  get '/contacts', to: 'static_pages#contacts'
+  get '/features', to: 'static_pages#features'
   get '/help', to: 'static_pages#help'
 end

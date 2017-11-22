@@ -7,6 +7,20 @@ class Bill < ApplicationRecord
   validates :payment_method, presence: true
   validates :vat, presence: true
 
+  def last_bill_date
+    user.bills.last.date
+  end
+
+  def new_bill
+    @date = self.last_bill_date
+    @activities.each do |activity|
+      if activity.date > @date
+        @new_activities << activity
+      end
+    end
+    @new_activities
+  end
+
   def get_taxable
     @activities = customer.activities
     @taxable = 0

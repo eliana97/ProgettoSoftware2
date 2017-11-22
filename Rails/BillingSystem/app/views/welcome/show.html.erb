@@ -1,3 +1,66 @@
-<div>
-  <h1>Welcome</h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" style="height:600px;" role="listbox">
+      <div class="item active">
+        <%= image_tag "time_main.jpg" %>
+        <div class="carousel-caption carousel-time">
+          <h2>FOCUS ON GROWING YOUR ACTIVITY</h2>
+        </div>
+      </div>
+
+      <div class="item">
+        <%= image_tag "finances.jpg" %>
+        <div class="carousel-caption carousel-finances">
+          <h2>THE PERFECT CLOUD SOLUTION TO IMPROVE YOUR BUSINESS</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
 </div>
+
+<div class="container text-center">
+  <h3>What We Do</h3><br>
+  <div class="row">
+    <div class="card col-sm-4">
+      <%= image_tag "finance.jpg", class: "card-img-top", alt: "Developers", width: "300px" %>
+      <div class="card-body">
+        <h4 class="card-title">Your finances in one place</h4>
+        <p class="card-text">Do you want to know always where your business stands? This app is what you need!</p>
+        <a href="#" class="btn btn-primary">Learn more</a>
+      </div>
+    </div>
+    <div class="card col-sm-4">
+      <%= image_tag "time.jpeg", class: "card-img-top", alt: "Track time", width: "300px" %>
+      <div class="card-body">
+        <h4 class="card-title">Track time in the easiest way</h4>
+        <p class="card-text">Track hourly billed tasks, activities with ease and convert theme into cool invoices at the push of a button</p>
+        <a href="#" class="btn btn-primary">Learn more</a>
+      </div>
+    </div>
+    <div class="card col-sm-4">
+      <%= image_tag "develop.jpg", class: "card-img-top", alt: "Developers", width: "300px" %>
+      <div class="card-body">
+        <h4 class="card-title">Young developers</h4>
+        <p class="card-text">Our app is built by young enthusiastic people studying at UniTn</p>
+        <a href="#" class="btn btn-primary">Our Team</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>

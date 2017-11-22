@@ -1,10 +1,10 @@
 class StaticPagesController < ApplicationController
+  def features
+  end
+
   def about
   end
-
-  def contacts
-  end
-
+  
   def help
   end
 end
