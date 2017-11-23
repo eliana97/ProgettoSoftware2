@@ -31,9 +31,9 @@
         <td><%= bill.payment_method %></td>
         <td><%= bill.deadline %></td>
         <td><%= bill.vat %></td>
-        <td><%= bill.get_taxable %></td>
+        <td><%= bill.taxable %></td>
         <td><%= bill.discount %></td>
-        <td><%= bill.get_total_cost %></td>
+        <td><%= bill.total_cost %></td>
         <td><%= link_to 'Show', bill %></td>
         <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
         <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>

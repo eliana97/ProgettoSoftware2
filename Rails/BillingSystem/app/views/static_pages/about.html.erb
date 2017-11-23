@@ -12,13 +12,13 @@
 
 <section>
   <div class="container-fluid text-center">
-    <h3>Who we are</h3><br>
+    <h2>Who we are</h2><br>
     <div class="row">
       <div class="card col-sm-4">
         <%= image_tag "me.jpg", class: "card-img-top img-circle", alt: "Alberto", height: "250px" %>
         <div class="card-body">
           <h4 class="card-title">Alberto</h4>
-          <p class="card-text">Developer</p>
+          <p class="card-text">Developer<br>dietre.alberto@gmail.com</p>
           <a href="https://www.linkedin.com/in/alberto-dietre-37b68a151/" target="_blank" class="btn btn-primary">Linkedin</a>
         </div>
       </div>
@@ -41,3 +41,34 @@
     </div>
   </div>
 </section>
+
+<div class="container text-center">
+  <h2>Where we are</h2><br>
+  <div id="map" class="container">
+
+    <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNNYp0N6kDhJ6LnFoyoaNGV4xcjIRMjJo&sensor=false">
+    </script>
+
+
+    <script type="text/javascript">
+    function initialize() {
+      var povo = {lat: 46.067108, lng: 11.149822};
+      var mapOptions = {
+
+      };
+      var map = new google.maps.Map(document.getElementById("map"),
+      {
+        center: povo,
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var marker = new google.maps.Marker({
+        position: povo,
+        map: map
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+</div>
+</div>

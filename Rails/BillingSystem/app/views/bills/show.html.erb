@@ -26,7 +26,7 @@
 
 <p>
   <strong>Taxable:</strong>
-  <%= @bill.get_taxable %>
+  <%= @bill.taxable %>
 </p>
 
 <p>
@@ -41,7 +41,7 @@
 
 <p>
   <strong>Total cost:</strong>
-  <%= @bill.get_total_cost %>
+  <%= @bill.total_cost %>
 </p>
 
 <%= link_to 'Edit', edit_bill_path(@bill) %> |

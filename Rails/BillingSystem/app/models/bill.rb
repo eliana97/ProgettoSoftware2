@@ -2,42 +2,57 @@ class Bill < ApplicationRecord
   belongs_to :customer
   belongs_to :user
 
+  has_many :activities, through: :customer
+
   validates :customer, presence: true
   validates :date, presence: true
   validates :payment_method, presence: true
   validates :vat, presence: true
 
-  def last_bill_date
-    user.bills.last.date
+  #before_save :set_taxable, :set_total_cost
+
+  # def new_activities
+  #   activities.map do |a|
+  #     a if a.billed == false
+  #   end
+  # end
+  #
+  # def set_taxable
+  #   self.taxable = 0
+  #   activities.each do |a|
+  #     if a.billed == false
+  #       self.taxable += a.hours_diff * 10
+  #       a.update billed: true
+  #     end
+  #   end
+  #   #update taxable: activities.map { |a| a.hours_diff * 10 if a.billed == false }.reduce(:+)
+  #   update taxable: taxable
+  # end
+  #
+  # def set_total_cost
+  #   self.total_cost = (self.taxable - self.taxable * (self.discount.to_f/100)).round(2)
+  #   self.total_cost = (self.total_cost + self.total_cost * (self.vat.to_f/100)).round(2)
+  #   if self.additional_cost != nil
+  #     (self.total_cost += self.additional_cost).round(2)
+  #   else
+  #     self.total_cost
+  #   end
+  #   update total_cost: total_cost
+  # end
+
+  def set_taxable
+     update taxable: activities.map{ |a| a.hours_diff * 10}.reduce(:+)
   end
 
-  def new_bill
-    @date = self.last_bill_date
-    @activities.each do |activity|
-      if activity.date > @date
-        @new_activities << activity
-      end
-    end
-    @new_activities
-  end
-
-  def get_taxable
-    @activities = customer.activities
-    @taxable = 0
-    @activities.each do |a|
-      @taxable += a.hours_diff * 10
-    end
-    @taxable
-  end
-
-  def get_total_cost
-    @total_cost = (@taxable - @taxable * (self.discount.to_f/100)).round(2)
-    @total_cost = (@total_cost + @total_cost * (self.vat.to_f/100)).round(2)
+  def set_total_cost
+    self.total_cost =  (self.taxable - self.taxable * (self.discount.to_f/100)).round(2)
+    self.total_cost = (self.total_cost + self.total_cost * (self.vat.to_f/100)).round(2)
     if self.additional_cost != nil
-      (@total_cost = @total_cost + self.additional_cost).round(2)
+      (self.total_cost += self.additional_cost).round(2)
     else
-      @total_cost
+      self.total_cost
     end
+    update total_cost: self.total_cost
   end
 
   def deadline
