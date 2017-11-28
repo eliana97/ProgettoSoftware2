@@ -13,7 +13,9 @@
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
+//= require_tree
+//= require Chart.bundle
+//= require chartkick
 
 $(function() {
   $(".expand").on( "click", function() {

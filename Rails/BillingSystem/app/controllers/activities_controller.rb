@@ -64,6 +64,15 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def destroy_multiple
+    current_user.activities.destroy(*params[:activities])
+
+    respond_to do |format|
+      format.html { redirect_to activities_path }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_activity

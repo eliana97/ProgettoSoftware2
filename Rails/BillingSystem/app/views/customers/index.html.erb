@@ -8,9 +8,11 @@
   </div>
 <% end %>
 
+<%= form_tag destroy_multiple_customers_path, method: :delete do %>
 <table class="table table-responsive">
   <thead>
     <tr>
+      <th></th>
       <th>Business Name</th>
       <th>Address</th>
       <th>Phone</th>
@@ -23,6 +25,7 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
+        <td><%= check_box_tag "customers[]", customer.id %></td>
         <td><%= customer.business_name %></td>
         <td><%= customer.address %></td>
         <td><%= customer.phone %></td>
@@ -35,9 +38,11 @@
     <% end %>
   </tbody>
 </table>
+<%= submit_tag "Delete selected", class: "btn btn-default" %>
+<% end %>
 <%= will_paginate @customers %>
 
 
 <br>
 
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'New Customer', new_customer_path, class: "btn btn-primary" %>

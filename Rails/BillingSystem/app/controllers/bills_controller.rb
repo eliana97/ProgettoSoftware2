@@ -72,6 +72,15 @@ class BillsController < ApplicationController
     end
   end
 
+  def destroy_multiple
+    current_user.bills.destroy(*params[:bills])
+
+    respond_to do |format|
+      format.html { redirect_to bills_path }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bill

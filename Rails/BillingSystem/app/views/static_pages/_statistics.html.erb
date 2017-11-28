@@ -1,0 +1,13 @@
+  <div class="text-center">
+    <h1>Statistics</h1>
+  </div>
+
+  <h2>Customers creation day by day</h2>
+  <%= line_chart current_user.customers.group_by_day(:created_at).count %>
+
+  <br>
+  <h2>Sum of total billed customer by customer</h2>
+  <%= bar_chart current_user.bills.group(:customer).sum(:total_cost), colors: ["#228b22"] %>
+
+  <h2>Sum of total billed by month</h2>
+  <%= bar_chart current_user.bills.group_by_month(:date, format: "%b %Y").sum(:total_cost), colors: ["#FF4500"] %>

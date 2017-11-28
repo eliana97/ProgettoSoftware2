@@ -4,7 +4,7 @@ Feature: create an activity
   I want to create a new activity
 
   Background:
-    Given there is a customer called "JRR Tolkien"
+    Given there is a customer called "UniTn"
 
   Scenario: create a valid activity
     Given I am an user

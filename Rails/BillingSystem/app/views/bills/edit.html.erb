@@ -1,6 +1,15 @@
-<h1>Editing Bill</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <%= link_to "Bill", bill_path(@bill), class: "btn btn-primary" %>
+    </div>
 
-<%= render 'form', bill: @bill %>
-<br>
-<%= link_to 'Show', @bill %> |
-<%= link_to 'Back', bills_path %>
+    <div class="col-md-6 text-right">
+      <%= link_to "Bills", bills_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>
+
+  <h1>Editing Bill</h1>
+
+  <%= render 'form', bill: @bill %>

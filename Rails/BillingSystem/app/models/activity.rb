@@ -8,10 +8,10 @@ class Activity < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
 
-
+  after_validation :set_billed
 
   def set_billed
-    update billed: false
+    self.billed = false
   end
 
   def hours_diff

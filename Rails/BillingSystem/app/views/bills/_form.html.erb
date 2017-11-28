@@ -1,55 +1,133 @@
-<%= form_with(model: bill, local: true) do |form| %>
-  <% if bill.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+<div class="container" style="font-size: 15px">
+  <%= form_with(model: bill, local: true) do |form| %>
+    <% if bill.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
 
-      <ul>
-      <% bill.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+        <% bill.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div class="field form-group">
-    <%= form.label :customer %>
-    <%= form.select :customer_id, options_for_select(current_user.customers.all.map{|c| [c, c.id]}),
-    id: :activity_customer, class: "form-control" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :date %>
-    <%= form.date_select :date, id: :bill_date, class: "form-control date" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :payment_method %>
-    <%= form.select(:payment_method, [["30"],["60"],["90"]], class: "form-control") %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :vat %>
-    <%= form.select :vat, [["10"],["22"]], class: "form-control" %>
-  </div>
-
-  <div class="col-auto">
-    <%= form.label :discount %>
-    <div class="input-group mb-2 mb-sm-0">
-      <div class="input-group-addon">%</div>
-      <%= form.number_field :discount, id: :bill_discount, class: "form-control" %>
-    </div>
-  </div>
   <br>
-
-  <div class="col-auto">
-    <%= form.label :additional_cost %>
-    <div class="input-group mb-2 mb-sm-0">
-      <div class="input-group-addon">€</div>
-      <%= form.text_field :additional_cost, id: :bill_additional_cost, class: "form-control" %>
+  <div class="row">
+    <div class="col-md-12 text-left">
+      <p>
+        <strong>Bill Number:</strong>
+        <%= @bill.id %>
+      </p>
     </div>
   </div>
-  <br>
-  <div class="actions">
-    <%= form.submit class: "btn btn-primary" %>
+
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <p>
+        <strong>From</strong><br>
+        Ase2017<br>
+        Via Sommarive 5<br>
+        Povo, Trento
+      </p>
+    </div>
+
+    <div class="col-md-6 text-right">
+      <div class="field form-group">
+        <%= form.label :date %>
+        <%= form.date_select :date, id: :bill_date, class: "form-control date" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <div class="field form-group">
+        <%= form.label :customer %>
+        <%= form.select :customer_id, options_for_select(current_user.customers.all.map{|c| [c, c.id]}),
+        id: :activity_customer, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-md-6 text-right">
+      <div class="field form-group">
+        <%= form.label :payment_method %>
+        <%= form.select(:payment_method, [["30"],["60"],["90"]], class: "form-control") %>
+      </div>
+    </div>
+  </div>
+
+<% if !current_page?(new_bill_path) %>
+  <div class="row">
+    <table class="table table-bordered table-hover table-responsive">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th class="text-right">Quantity</th>
+          <th class="text-right">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bill.activities.each do |activity| %>
+        <tr>
+          <td><%= activity.description %></td>
+          <td class="text-right"><%= activity.hours_diff %></td>
+          <td class="text-right"><%= activity.hours_diff * 10 %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 <% end %>
+
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-right">
+        <strong>Taxable</strong>
+      <%= @bill.taxable %> €
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-10"></div>
+    <div class="col-md-2  text-right">
+      <%= form.label :discount %>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon">%</div>
+        <%= form.number_field :discount, id: :bill_discount, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+
+    <div class="col-md-12 text-right">
+      <div class="field form-group">
+        <%= form.label :vat %>
+        <%= form.select :vat, [["10"],["22"]], class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-10"></div>
+    <div class="col-md-2 text-right">
+      <%= form.label :additional_cost %>
+      <div class="input-group mb-2 mb-sm-0">
+        <div class="input-group-addon">€</div>
+        <%= form.text_field :additional_cost, id: :bill_additional_cost, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="text-right actions">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+  <% end %>
+</div>

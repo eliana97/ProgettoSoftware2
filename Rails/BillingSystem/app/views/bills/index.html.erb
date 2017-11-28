@@ -8,9 +8,11 @@
   </div>
 <% end %>
 
+<%= form_tag destroy_multiple_bills_path, method: :delete do %>
 <table class="table table-responsive">
   <thead>
     <tr>
+      <th></th>
       <th>Customer</th>
       <th>Date</th>
       <th>Pmt method </th>
@@ -26,10 +28,11 @@
   <tbody>
     <% @bills.each do |bill| %>
       <tr>
+        <td><%= check_box_tag "bills[]", bill.id %></td>
         <td><%= bill.customer %></td>
-        <td><%= bill.date %></td>
+        <td><%= bill.date.to_formatted_s(:standard) %></td>
         <td><%= bill.payment_method %></td>
-        <td><%= bill.deadline %></td>
+        <td><%= bill.deadline.to_formatted_s(:standard) %></td>
         <td><%= bill.vat %></td>
         <td><%= bill.taxable %></td>
         <td><%= bill.discount %></td>
@@ -42,8 +45,10 @@
     <% end %>
   </tbody>
 </table>
+<%= submit_tag "Delete selected", class: "btn btn-default" %>
+<% end %>
 <%= will_paginate @bills %>
 
 <br>
 
-<%= link_to 'New Bill', new_bill_path %>
+<%= link_to 'New Bill', new_bill_path, class: "btn btn-primary" %>

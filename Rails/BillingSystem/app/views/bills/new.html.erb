@@ -1,5 +1,9 @@
+<div class="row">
+  <div class="col-md-6 text-left">
+    <%= link_to "Bills", bills_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
 <h1>New Bill</h1>
 
 <%= render 'form', bill: @bill %>
-<br>
-<%= link_to 'Back', bills_path %>

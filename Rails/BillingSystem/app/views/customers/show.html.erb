@@ -1,28 +1,31 @@
+<div class="container">
+  <div>
+    <h3 style="display: inline;"><strong>Name: </strong></h3>
+    <span><h1 style="display: inline;"><%= @customer.business_name %></h1></span>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @customer.business_name %>
-</p>
+  <div>
+    <h3><strong>Address:</strong>
+    <%= @customer.address %></h3>
+  </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
+  <div>
+    <h3><strong>Phone:</strong>
+    <%= @customer.phone %></h3>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
+  <div>
+    <h3><strong>Email:</strong>
+    <%= @customer.email %></h3>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
+  <div>
+    <h3><strong>VAT number:</strong>
+    <%= @customer.vat_number %></h3>
+  </div>
 
-<p>
-  <strong>VAT number:</strong>
-  <%= @customer.vat_number %>
-</p>
+  <hr>
+  <%= link_to 'Edit', edit_customer_path(@customer), class: "btn btn-primary" %>
+  <%= link_to 'Back', customers_path, class: "btn btn-primary" %>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+</div>

@@ -1,6 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1, h2 {
+  font-family: 'TypoGraphica';
+}
+
+@font-face {
+  font-family: 'TypoGraphica';
+  src:font-url('TypoGraphica.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 th {
   padding: 5px;
   padding-right: 30px;

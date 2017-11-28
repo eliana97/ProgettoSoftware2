@@ -1,48 +1,124 @@
+<div class="container" style="font-size: 15px">
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <%= link_to "Bills", bills_path, class: "btn btn-primary" %>
+    </div>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @bill.customer %>
-</p>
+    <div class="col-md-6 text-right">
+      <%= link_to "Edit", edit_bill_path(@bill), class: "btn btn-success" %>
+    </div>
+  </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @bill.date %>
-</p>
+  <h3>Bill</h3><br>
 
-<p>
-  <strong>Payment method:</strong>
-  <%= @bill.payment_method %>
-</p>
+  <div class="row">
+    <div class="col-md-12 text-left">
+      <p>
+        <strong>Bill Number:</strong>
+        <%= @bill.id %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @bill.deadline %>
-</p>
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <p>
+        <strong>From</strong><br>
+        Ase2017<br>
+        Via Sommarive 5<br>
+        Povo, Trento
+      </p>
+    </div>
 
-<p>
-  <strong>Vat [%]:</strong>
-  <%= @bill.vat %>
-</p>
+    <div class="col-md-6 text-right">
+      <p>
+        <strong>Date</strong><br>
+        <%= @bill.date.to_formatted_s(:standard) %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Taxable:</strong>
-  <%= @bill.taxable %>
-</p>
+  <div class="row">
+    <div class="col-md-6 text-left">
+      <p>
+        <strong>To</strong><br>
+        <%= @bill.customer.business_name %><br>
+        <%= @bill.customer.address %><br>
+        <%= @bill.customer.vat_number %><br>
+      </p>
+    </div>
 
-<p>
-  <strong>Discount [%]:</strong>
-  <%= @bill.discount %>
-</p>
+    <div class="col-md-6 text-right">
+      <p>
+        <strong>Payment method</strong><br>
+        <%= @bill.payment_method %> days
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Additional cost:</strong>
-  <%= @bill.additional_cost %>
-</p>
+  <div class="row">
+    <table class="table table-bordered table-hover table-responsive">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th class="text-right">Quantity</th>
+          <th class="text-right">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bill.activities.each do |activity| %>
+        <tr>
+          <td><%= activity.description %></td>
+          <td class="text-right"><%= activity.hours_diff %></td>
+          <td class="text-right"><%= activity.hours_diff * 10 %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-<p>
-  <strong>Total cost:</strong>
-  <%= @bill.total_cost %>
-</p>
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-right">
+        <strong>Taxable</strong>
+      <%= @bill.taxable %> €
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_bill_path(@bill) %> |
-<%= link_to 'Back', bills_path %>
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-right">
+        <strong>Discount</strong>
+      <%= @bill.discount %> %
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-right">
+        <strong>VAT</strong>
+      <%= @bill.vat %> %
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-right">
+        <strong>Additional Costs</strong>
+      <%= @bill.additional_cost %> €
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-md-6 text-left">
+        <strong>Deadline</strong>
+      <%= @bill.deadline.to_formatted_s(:standard) %>
+    </div>
+
+    <div class="col-md-6 text-right">
+        <strong>Total Cost</strong>
+      <%= @bill.total_cost %> €
+    </div>
+  </div>
+</div>
