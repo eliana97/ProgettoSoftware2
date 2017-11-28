@@ -23,7 +23,7 @@
   </thead>
 
   <tbody>
-    <% @activities.order("created_at DESC").each do |activity| %>
+    <% @activities.order("date DESC").each do |activity| %>
       <tr>
         <td><%= check_box_tag "activities[]", activity.id %></td>
         <td><%= activity.customer %></td>
