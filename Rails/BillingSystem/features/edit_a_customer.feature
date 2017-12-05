@@ -12,10 +12,10 @@ Feature: edit a customer
     Then I am on the page of the customer
     Then the business_name of the customer is "UniTn"
 
-  Scenario: ca't leave the business_name blank
+  Scenario: can't leave the business_name blank
     Given there is a customer
-    ad I am viewing the details of a customer
+    And I am viewing the details of a customer
     When I click on "Edit"
-    ad I chage business_name to ""
-    ad I click on "Save"
-    Then I should see a error
+    And I change business_name to ""
+    And I click on "Save"
+    Then I should see a error message

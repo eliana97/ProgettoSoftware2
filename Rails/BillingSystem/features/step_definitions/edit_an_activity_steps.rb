@@ -3,15 +3,15 @@ Given("there is an activity") do
 end
 
 Given("I am viewing the details of an activity") do
-  visit activities_path
+  visit activity_path(@activity)
 end
 
 When("I click on {string}") do |string|
-  fill_in :description, with: string
+  click_on string
 end
 
 When("I change description to {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in 'Description', with: string
 end
 
 Then("the description of the activity is {string}") do |string|
@@ -20,5 +20,5 @@ Then("the description of the activity is {string}") do |string|
 end
 
 Then("I should see an error") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_css('#error_explanation')
 end

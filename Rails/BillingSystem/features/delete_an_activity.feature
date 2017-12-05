@@ -4,7 +4,6 @@ Feature: delete an activity
   I want to delete an activity
 
   Scenario: delete an activity
-    Given I am an user
-    When I click on delete activity
-    Then I should see a message of deletion and no more the activity in
-    the list
+    Given I am an user called "aa"
+    When I click on "Delete Activity"
+    Then I shouldn't see the activity in the list

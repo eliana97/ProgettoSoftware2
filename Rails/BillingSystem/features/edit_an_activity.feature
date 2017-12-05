@@ -9,7 +9,6 @@ Feature: edit an activity
     When I click on "Edit"
     And I change description to "Prova2"
     And I click on "Update Activity"
-    Then I am on the page of the activity
     Then the description of the activity is "Prova2"
 
   Scenario: can't leave the description blank
@@ -18,4 +17,4 @@ Feature: edit an activity
     When I click on "Edit"
     And I change description to ""
     And I click on "Save"
-    Then I should see an error
+    Then I should see a error message

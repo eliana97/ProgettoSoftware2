@@ -4,13 +4,12 @@ Feature: create a bill
   I want to create a new bill
 
   Scenario: create a valid bill
-    Given I am an user
-    When I click on new bill
+    Given I am an user called "aa"
+    When I click on "New Bill"
     And I fill in the form with valid data
-    Then I should see the bill in the list with all the activities from the period linked with the selected customer
-
+    Then I should see the bill in the list
   Scenario: create an invalid bill
-    Given I am an user
-    When I click on new bill
+    Given I am an user called "aa"
+    When I click on "New Bill"
     And I fill in the form with an invalid date
     Then I should see a error message

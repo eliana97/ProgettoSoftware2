@@ -4,7 +4,6 @@ Feature: delete a customer
   I want to delete a customer
 
   Scenario: delete a customer
-    Given I am an user
-    When I click on delete customer
-    Then I should see a message of deletion and no more the customer in
-    the list
+    Given I am an user called "aa"
+    When I click on "Delete Customer"
+    Then I shouldn't see the customer in the list

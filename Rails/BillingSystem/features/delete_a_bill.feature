@@ -4,7 +4,6 @@ Feature: delete a bill
   I want to delete a bill
 
   Scenario: delete a bill
-    Given I am an user
-    When I click on delete bill
-    Then I should see a message of deletion and no more the bill in
-    the list
+    Given I am an user called "aa"
+    When I click on "Delete Bill"
+    Then I shouldn't see the bill in the list
