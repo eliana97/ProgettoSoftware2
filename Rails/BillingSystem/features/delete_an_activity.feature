@@ -4,6 +4,6 @@ Feature: delete an activity
   I want to delete an activity
 
   Scenario: delete an activity
-    Given I am an user called "aa"
+    Given I am an user called "aa.aa@aa.it" with password "aa"
     When I click on "Delete Activity"
     Then I shouldn't see the activity in the list

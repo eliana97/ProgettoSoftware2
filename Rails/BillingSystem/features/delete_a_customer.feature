@@ -4,6 +4,6 @@ Feature: delete a customer
   I want to delete a customer
 
   Scenario: delete a customer
-    Given I am an user called "aa"
+    Given I am an user called "aa.aa@aa.it" with password "aa"
     When I click on "Delete Customer"
     Then I shouldn't see the customer in the list

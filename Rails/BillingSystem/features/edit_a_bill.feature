@@ -3,8 +3,12 @@ Feature: edit a bill
   As a user
   I want to edit a bill
 
+  Background:
+  Given I am an user called "aa.aa@aa.it" with password "aa"
+  Given there is a customer called "UniTn"
+
   Scenario: edit a bill
-    Given I am an user called "aa"
+    Given there is an activity called "Prova"
     When I click on "Edit"
     And I change date to "24/10/2017"
     Then I should see "24/10/2017" in the list of bills

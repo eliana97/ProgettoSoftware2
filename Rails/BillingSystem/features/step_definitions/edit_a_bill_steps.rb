@@ -1,5 +1,9 @@
 Given("there is a bill") do
-  @bill = FactoryBot.create(:bill)
+  @bill = FactoryBot.create(:bill, customer: @customer, user: @user)
+end
+
+Given("there is an activity called {string}") do |string|
+  @activity = FactoryBot.create(:activity, description: string, customer: @customer, user: @user)
 end
 
 Given("I am viewing the details of a bill") do

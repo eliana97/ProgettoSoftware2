@@ -1,13 +1,15 @@
+And("I am logged in") do
+  click_on "Sign in"
+  fill_in "Email", with: @user.email
+  fill_in "Password", with: @user.password
+end
+
 Given("there is a customer called {string}") do |string|
-  FactoryBot.create(:customer, business_name: string)
+  @customer = FactoryBot.create(:customer, business_name: string)
 end
 
-Given("I am an user called {string}") do |email|
-  FactoryBot.create(:user, email: email)
-end
-
-When("I click on {string}") do |string|
-  click_on string
+Given("I am an user called {string} with password {string}") do |email,pw|
+  @user = FactoryBot.create(:user, email: email, password: pw)
 end
 
 When("I fill in the form with valid data") do
