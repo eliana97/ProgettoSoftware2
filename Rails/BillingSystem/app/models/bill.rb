@@ -13,19 +13,22 @@ class Bill < ApplicationRecord
   before_save :set_taxable, :set_total_cost
 
   def activities
-    customer.activities
-  end
-
-  #caclulate the taxable bringing the activities of a customer
-  def set_taxable
-    self.taxable = 0
-    self.activities.each do |a|
+    customer.activities.each do |a|
       if a.billed == false
-        self.taxable += a.hours_diff * 10
+        activities << a
         a.billed = true
       end
     end
-    self.taxable = self.taxable
+  end
+
+  #caclulate the taxable bringing the activities of a customer
+  #we don't have variable hourly rate but we have 10 €
+  def set_taxable
+    self.taxable = 0
+    self.activities.each do |a|
+      self.taxable += a.hours_diff * 10
+    end
+    self.taxable
   end
 
   #bring the taxable and add discount, VAT and additional cost

@@ -8,7 +8,7 @@ class Activity < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
 
-  after_validation :set_billed
+  after_save :set_billed
 
   def set_billed
     self.billed = false

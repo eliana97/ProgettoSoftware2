@@ -26,7 +26,7 @@
   </thead>
 
   <tbody>
-    <% @bills.each do |bill| %>
+    <% @bills.order("date DESC").each do |bill| %>
       <tr>
         <td><%= check_box_tag "bills[]", bill.id %></td>
         <td><%= bill.customer %></td>
