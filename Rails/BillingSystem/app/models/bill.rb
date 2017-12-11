@@ -5,9 +5,9 @@ class Bill < ApplicationRecord
 
   #has_many :activities, through: :customer
 
-  #validates :customer, presence: true
-  #validates :date, presence: true
-  #validates :payment_method, presence: true
+  validates :customer, presence: true
+  validates :date, presence: true
+  validates :payment_method, presence: true
   validates :vat, presence: true
 
   before_save :set_taxable, :set_total_cost

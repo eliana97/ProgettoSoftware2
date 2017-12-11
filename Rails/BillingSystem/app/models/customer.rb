@@ -4,9 +4,9 @@ class Customer < ApplicationRecord
   belongs_to :user, optional: true
 
   validates :business_name, presence: true
-  #validates :address, presence: true
-  #validates :phone, presence: true
-  #validates :vat_number, presence: true, length: { in: 11..16}
+  validates :address, presence: true
+  validates :phone, presence: true
+  validates :vat_number, presence: true, length: { in: 11..16}
 
   def to_s
     "#{business_name}"

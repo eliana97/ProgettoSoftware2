@@ -4,9 +4,9 @@ class Activity < ApplicationRecord
 
   validates :customer, presence: true
   validates :description, presence: true
-  #validates :date, presence: true
-  #validates :start_time, presence: true
-  #validates :end_time, presence: true
+  validates :date, presence: true
+  validates :start_time, presence: true
+  validates :end_time, presence: true
 
   after_validation :set_billed
 
