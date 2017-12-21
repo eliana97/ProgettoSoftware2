@@ -11,7 +11,7 @@ And("I am on {string} page") do |string|
 end
 
 And("there is a customer called {string}") do |string|
-  @customer = FactoryBot.create(:customer, business_name: string)
+  @customer = FactoryBot.create(:customer, business_name: string, user: @user)
 end
 
 Given("I am an user called {string}") do |email|

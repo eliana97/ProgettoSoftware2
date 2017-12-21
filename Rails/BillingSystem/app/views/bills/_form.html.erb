@@ -52,7 +52,7 @@
     <div class="col-md-6 text-right">
       <div class="field form-group">
         <%= form.label :payment_method %>
-        <%= form.select(:payment_method, [["30"],["60"],["90"]], class: "form-control") %>
+        <%= form.select(:payment_method, [["30"],["60"],["90"]], id: :bill_payment, name: :bill_payment, class: "form-control") %>
       </div>
     </div>
   </div>

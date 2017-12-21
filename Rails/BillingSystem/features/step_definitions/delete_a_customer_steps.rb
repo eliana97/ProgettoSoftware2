@@ -1,9 +1,7 @@
 Then("I shouldn't see the customer in the list") do
-  bill = FactoryBot.create(:bill)
-  bill.destroy
+  expect(page).to have_no_content("UniTn")
 end
 
 And("I confirm the popup") do
-  popup= page.driver.browser.switch_to.alert
-  popup.accept
+  page.driver.browser.switch_to.alert.accept
 end

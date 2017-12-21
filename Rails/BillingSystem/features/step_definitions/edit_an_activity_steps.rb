@@ -1,10 +1,6 @@
 And("there is an activity") do
-  @user = FactoryBot.create(:user, email: "cc.cc@cc.it", password: "aa")
-  @activity = FactoryBot.create(:activity, user: @user)
-end
-
-Given("I am viewing the details of an activity") do
-  visit activity_path(@activity)
+  @customer = FactoryBot.create(:customer, user: @user)
+  @activity = FactoryBot.create(:activity, user: @user, customer: @customer)
 end
 
 When("I click on {string}") do |string|
@@ -16,7 +12,6 @@ When("I change description to {string}") do |string|
 end
 
 Then("the description of the activity is {string}") do |string|
-  visit activity_path(@activity)
   expect(page).to have_content(string)
 end
 

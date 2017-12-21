@@ -7,6 +7,6 @@ And("I fill in the bill form with valid data") do
   fill_in 'Discount', with: "20"
 end
 
-When("I fill in the form with an invalid date") do
-  fill_in "Date", with: "ciao"
+When("I fill in the form with an invalid customer") do
+  select 'Ciao', :from => 'customer'
 end

@@ -16,5 +16,5 @@ Feature: create a bill
 
   Scenario: create an invalid bill
     When I click on "New Bill"
-    And I fill in the form with an invalid date
+    And I fill in the form with an invalid customer
     Then I should see a error message

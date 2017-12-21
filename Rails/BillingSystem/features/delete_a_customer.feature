@@ -9,6 +9,7 @@ Feature: delete a customer
     And there is a customer called "UniTn"
     And I am on "Customers" page
 
+  @javascript
   Scenario: delete a customer
     When I click on "Destroy"
     And I confirm the popup
