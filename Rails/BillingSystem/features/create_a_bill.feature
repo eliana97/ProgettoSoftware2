@@ -3,13 +3,18 @@ Feature: create a bill
   As a user
   I want to create a new bill
 
+  Background:
+    Given I have an account
+    And I am logged in
+    And there is a customer called "UniTn"
+    And I am on "Bills" page
+
   Scenario: create a valid bill
-    Given I am an user called "aa.aa@aa.it" with password "aa"
     When I click on "New Bill"
-    And I fill in the form with valid data
+    And I fill in the bill form with valid data
     Then I should see the bill in the list
+
   Scenario: create an invalid bill
-    Given I am an user called "aa.aa@aa.it" with password "aa"
     When I click on "New Bill"
     And I fill in the form with an invalid date
     Then I should see a error message

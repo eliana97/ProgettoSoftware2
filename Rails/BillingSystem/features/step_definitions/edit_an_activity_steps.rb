@@ -15,7 +15,7 @@ When("I change description to {string}") do |string|
 end
 
 Then("the description of the activity is {string}") do |string|
-  #expect(@activity.description).to eq(string)
+  visit activity_path(@activity)
   expect(page).to have_content(string)
 end
 

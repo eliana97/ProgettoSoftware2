@@ -4,8 +4,10 @@ Feature: edit a bill
   I want to edit a bill
 
   Background:
-  Given I am an user called "aa.aa@aa.it" with password "aa"
-  Given there is a customer called "UniTn"
+    Given I have an account
+    And I am logged in
+    And there is a customer called "UniTn"
+    And I am on "Bills" page
 
   Scenario: edit a bill
     Given there is an activity called "Prova"

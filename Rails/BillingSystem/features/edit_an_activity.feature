@@ -3,6 +3,11 @@ Feature: edit an activity
   As a user
   I want to edit an activity
 
+  Background:
+    Given I have an account
+    And I am logged in
+    And there is a customer called "UniTn"
+
   Scenario: change the description of an activity
     Given there is an activity
     And I am viewing the details of an activity
@@ -16,5 +21,5 @@ Feature: edit an activity
     And I am viewing the details of an activity
     When I click on "Edit"
     And I change description to ""
-    And I click on "Save"
+    And I click on "Update Activity"
     Then I should see a error message
