@@ -4,5 +4,6 @@ FactoryBot.define do
     address "Via Roma Trento"
     phone "0444111111"
     vat_number 11111111111
+    user
   end
 end

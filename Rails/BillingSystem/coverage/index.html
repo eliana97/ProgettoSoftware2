@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-12-21T15:35:53+01:00">2017-12-21T15:35:53+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-12-21T15:54:56+01:00">2017-12-21T15:54:56+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">73.21%</span></span>
+    (<span class="covered_percent"><span class="red">72.82%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.23
+         1.22
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>44</b> files in total.
-    <b>377</b> relevant lines. 
+    <b>379</b> relevant lines. 
     <span class="green"><b>276</b> lines covered</span> and
-    <span class="red"><b>101</b> lines missed </span>
+    <span class="red"><b>103</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,11 +52,11 @@
       
       <tr>
         <td class="strong"><a href="#65a9285a0d05cb55582fb70979a13ad8aa386352" class="src_link" title="app/controllers/activities_controller.rb">app/controllers/activities_controller.rb</a></td>
-        <td class="red strong">60.0 %</td>
+        <td class="red strong">57.5 %</td>
         <td>86</td>
         <td>40</td>
-        <td>24</td>
-        <td>16</td>
+        <td>23</td>
+        <td>17</td>
         <td>0.9</td>
       </tr>
       
@@ -157,7 +157,7 @@
         <td>14</td>
         <td>12</td>
         <td>2</td>
-        <td>1.6</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -427,16 +427,16 @@
         <td>10</td>
         <td>7</td>
         <td>3</td>
-        <td>0.9</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#021a08128eb33b599f93aaa90e5d9b57e08282be" class="src_link" title="features/step_definitions/edit_an_activity_steps.rb">features/step_definitions/edit_an_activity_steps.rb</a></td>
-        <td class="red strong">69.23 %</td>
-        <td>24</td>
-        <td>13</td>
+        <td class="red strong">64.29 %</td>
+        <td>25</td>
+        <td>14</td>
         <td>9</td>
-        <td>4</td>
+        <td>5</td>
         <td>1.5</td>
       </tr>
       
@@ -473,9 +473,9 @@
       <tr>
         <td class="strong"><a href="#bda561d96fdf89d1abfbab95b50ead3d96abf2ce" class="src_link" title="spec/factories/customer.rb">spec/factories/customer.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>6</td>
-        <td>6</td>
+        <td>9</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -509,11 +509,11 @@
         <div class="source_table" id="65a9285a0d05cb55582fb70979a13ad8aa386352">
   <div class="header">
     <h3>app/controllers/activities_controller.rb</h3>
-    <h4><span class="red">60.0 %</span> covered</h4>
+    <h4><span class="red">57.5 %</span> covered</h4>
     <div>
       <b>40</b> relevant lines. 
-      <span class="green"><b>24</b> lines covered</span> and
-      <span class="red"><b>16</b> lines missed.</span>
+      <span class="green"><b>23</b> lines covered</span> and
+      <span class="red"><b>17</b> lines missed.</span>
     </div>
   </div>
   
@@ -988,8 +988,8 @@
           <code class="ruby">    def set_activity</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="79">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="79">
+          
           
           <code class="ruby">      @activity = current_user.activities.find(params[:id])</code>
         </li>
@@ -2143,8 +2143,8 @@
           <code class="ruby">    def set_customer</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="78">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="78">
+          <span class="hits">2</span>
           
           <code class="ruby">      @customer = current_user.customers.find(params[:id])</code>
         </li>
@@ -2660,8 +2660,8 @@
           <code class="ruby">  def set_billed</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="14">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
           
           <code class="ruby">    self.billed = false</code>
         </li>
@@ -5636,7 +5636,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">Given(&quot;there is a customer&quot;) do</code>
+          <code class="ruby">And(&quot;there is a customer&quot;) do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="2">
@@ -5663,8 +5663,8 @@
           <code class="ruby">Given(&quot;I am viewing the details of a customer&quot;) do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
           <code class="ruby">  visit customer_path(@customer)</code>
         </li>
@@ -5755,11 +5755,11 @@
         <div class="source_table" id="021a08128eb33b599f93aaa90e5d9b57e08282be">
   <div class="header">
     <h3>features/step_definitions/edit_an_activity_steps.rb</h3>
-    <h4><span class="red">69.23 %</span> covered</h4>
+    <h4><span class="red">64.29 %</span> covered</h4>
     <div>
-      <b>13</b> relevant lines. 
+      <b>14</b> relevant lines. 
       <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -5769,142 +5769,148 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">Given(&quot;there is an activity&quot;) do</code>
+          <code class="ruby">And(&quot;there is an activity&quot;) do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="2">
           <span class="hits">2</span>
           
-          <code class="ruby">  @activity = FactoryBot.create(:activity)</code>
+          <code class="ruby">  @user = FactoryBot.create(:user, email: &quot;cc.cc@cc.it&quot;, password: &quot;aa&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="2" data-linenumber="3">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">  @activity = FactoryBot.create(:activity, user: @user)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
           
           
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">Given(&quot;I am viewing the details of an activity&quot;) do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
           
           <code class="ruby">  visit activity_path(@activity)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">When(&quot;I click on {string}&quot;) do |string|</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="10">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="11" data-linenumber="11">
+          <span class="hits">11</span>
           
           <code class="ruby">  click_on string</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">When(&quot;I change description to {string}&quot;) do |string|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="15">
           
           
           <code class="ruby">  fill_in &#39;Description&#39;, with: string</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">Then(&quot;the description of the activity is {string}&quot;) do |string|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="missed" data-hits="0" data-linenumber="19">
           
           
           <code class="ruby">  visit activity_path(@activity)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="missed" data-hits="0" data-linenumber="20">
           
           
           <code class="ruby">  expect(page).to have_content(string)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">Then(&quot;I should see an error&quot;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="24">
           
           
           <code class="ruby">  expect(page).to have_css(&#39;#error_explanation&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
@@ -6163,8 +6169,8 @@
     <h3>spec/factories/customer.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6208,13 +6214,19 @@
           <code class="ruby">    vat_number 11111111111</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>

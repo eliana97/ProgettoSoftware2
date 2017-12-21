@@ -1,5 +1,6 @@
-Given("there is an activity") do
-  @activity = FactoryBot.create(:activity)
+And("there is an activity") do
+  @user = FactoryBot.create(:user, email: "cc.cc@cc.it", password: "aa")
+  @activity = FactoryBot.create(:activity, user: @user)
 end
 
 Given("I am viewing the details of an activity") do

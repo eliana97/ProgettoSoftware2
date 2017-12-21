@@ -1,4 +1,4 @@
-Given("there is a customer") do
+And("there is a customer") do
   @customer = FactoryBot.create(:customer)
 end
 
