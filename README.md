@@ -17,10 +17,10 @@ Our app was developped with the **Ruby** language version [2.4.2] and **Rails** 
 -In order to correctly run tests you have to install the **geckodriver** and append it to your PATH variable and also you have to install *Mozzilla Firefox* as broswer.
 
 ###### LICENSE:
-Here you can find the [LICENSE](LICENSE)
+Here you can find the [LICENSE](https://github.com/eliana97/ProgettoSoftware2/blob/master/Rails/BillingSystem/LICENSE.md)
 
 ##### Other information:
-You can find other information (i.e. the ER structure) into the [doc](doc) folder.
+You can find other information (i.e. the ER structure) into the [doc](https://github.com/eliana97/ProgettoSoftware2/tree/master/Rails/BillingSystem/doc) folder.
 
 
 
