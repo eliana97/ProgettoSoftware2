@@ -19,7 +19,10 @@ Our app was developped with the **Ruby** language version [2.4.2] and **Rails** 
 ###### LICENSE:
 Here you can find the [LICENSE](https://github.com/eliana97/ProgettoSoftware2/blob/master/Rails/BillingSystem/LICENSE.md)
 
-##### Other information:
+##### System presentation:
+Here there is a short [presentation](https://github.com/eliana97/ProgettoSoftware2/blob/master/Rails/BillingSystem/doc/Billing_system.pdf) of our application.
+
+###### Other information:
 You can find other information (i.e. the ER structure) into the [doc](https://github.com/eliana97/ProgettoSoftware2/tree/master/Rails/BillingSystem/doc) folder.
 
 
